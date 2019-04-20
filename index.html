@@ -1,0 +1,35 @@
+$('#video-popover-1').tinytooltip({
+            placement: 'right auto',
+            action: 'popover',
+            html: true,
+            maxwidth: 340,
+            trigger: 'hoverable',
+            title: 'Video Popover',
+            container: 'body',
+            content: '<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/hA6hldpSTF8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>'
+});
+
+$('#video-tooltip-1').tinytooltip({
+            placement: 'right auto',
+            html: true,
+            maxwidth: 340,
+            trigger: 'hoverable',
+            title: '<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/hA6hldpSTF8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>'
+});
+
+
+======================================
+
+<a data-href="{{section.settings.video_url1.id}}" class="clr-w video-tooltip theme-colored watch-video-updated" data-toggle="popover" data-trigger="hover" data-placement="right auto" data-original-title="" title=""><i class="fa fa-volume-up" aria-hidden="true"></i>&nbsp; {{ section.settings.video1 }}</a>
+
+$("[data-toggle=popover]").each(function(i, obj) {
+        var href = $(this).data('href');
+        var placement = $(this).data('placement');
+        $(this).tinytooltip({
+            placement: placement,
+            html: true,
+            maxwidth: 450,
+            trigger: 'hoverable',
+            title: '<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/'+ href +'?rel=0&amp;&autoplay=1&controls=0&loop=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>'
+        });
+});
